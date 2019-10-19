@@ -1,5 +1,7 @@
 # Data Structures and Algorithms (DSA)
 
+[![Build Status](https://travis-ci.com/habenamare/dsa.svg?branch=master)](https://travis-ci.com/habenamare/dsa)
+
 **Data structures** in this repo:
   - Stack
 
