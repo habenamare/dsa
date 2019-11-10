@@ -107,31 +107,29 @@ func TestSize(t *testing.T) {
 }
 
 func TestIsFull(t *testing.T) {
-	s := &Stack{max: 0, size: 100}
-	limitedS := &Stack{max: 5, size: 4}
-	fullLimitedS := &Stack{max: 5, size: 5}
-
-	if s.IsFull() {
-		t.Fatalf(
-			"expected calling `IsFull()` on a Stack with a `max` of 0 and a `size` of 100 to return %v, got %v",
-			false,
-			s.IsFull(),
-		)
+	testCases := []struct {
+		s        Stack
+		expected bool
+	}{
+		{Stack{max: 0, size: 100}, false},
+		{Stack{max: 5, size: 4}, false},
+		{Stack{max: 5, size: 5}, true},
 	}
 
-	if limitedS.IsFull() {
-		t.Fatalf(
-			"expected calling `IsFull()` on a Stack with a `max` of 5 and a `size` of 4 to return %v, got %v",
-			false,
-			limitedS.IsFull(),
-		)
-	}
-
-	if !fullLimitedS.IsFull() {
-		t.Fatalf(
-			"expected calling `IsFull()` on a Stack with a `max` of 5 and a `size` of 5 to return %v, got %v",
-			true,
-			fullLimitedS.IsFull(),
+	for _, tc := range testCases {
+		t.Run(
+			fmt.Sprintf("Stack{max: %d, size: %d}", tc.s.max, tc.s.size),
+			func(t *testing.T) {
+				if got := tc.s.IsFull(); got != tc.expected {
+					t.Fatalf(
+						"expected calling `IsFull()` on a Stack with a `max` of %v and a `size` of %v to return %v, got %v",
+						tc.s.max,
+						tc.s.size,
+						tc.expected,
+						tc.s.IsFull(),
+					)
+				}
+			},
 		)
 	}
 }
