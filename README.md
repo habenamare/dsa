@@ -9,4 +9,6 @@
 **Algorithms** in this repo:
   - Bracket Matching
 
-Most of the implementations in this repo are based on [Data Structures Easy to Advanced Course](https://www.youtube.com/watch?v=RBSGKlAvoiM) by [William Fiset](https://github.com/williamfiset).
+## References
+
+ - [Data Structures Easy to Advanced Course](https://www.youtube.com/watch?v=RBSGKlAvoiM) by [William Fiset](https://github.com/williamfiset).
