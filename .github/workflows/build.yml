@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v1
       
       - name: Run all test files with race detection enabled
-        run: go test -v -race ./...
+        run: make test
